@@ -17,8 +17,8 @@
 
 ```bash
 # ၁။ Folder အသစ်ဆောက်ပြီး ထို folder ထဲသို့ ဝင်ပါ
-mkdir git-practice
-cd git-practice
+mkdir git-assignment
+cd git-assignment
 
 # ၂။ Git Repository အသစ် စတင်ပါ
 git init
