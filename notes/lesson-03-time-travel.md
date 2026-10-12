@@ -120,6 +120,9 @@ git reflog
 
 # ၂။ ဖျက်လိုက်သော commit မတိုင်မီ အခြေအနေ (ဥပမာ HEAD@{1}) ကို ရှာပြီး ပြန်လည် ခေါ်ယူပါ
 git reset --hard HEAD@{1}
+
+git reset --hard 'HEAD@{1}' # powershell သုံးရင်  quotes ထည့်ရတယ်
+
 ```
 
 ---
