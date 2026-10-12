@@ -10,6 +10,8 @@ Git ကို ကျွမ်းကျင်စွာ အသုံးပြု�
 3. [Git Time Travel (အတိတ်သို့ ပြန်သွားခြင်းနှင့် ပြင်ဆင်ခြင်း)](#3-git-time-travel-အတိတ်သို့-ပြန်သွားခြင်းနှင့်-ပြင်ဆင်ခြင်း)
 4. [Git Rebase vs Merge](#4-git-rebase-vs-merge)
 5. [Git Best Practices အကြံပြုချက်များ](#5-git-best-practices-အကြံပြုချက်များ)
+6. [လက်တွေ့လေ့ကျင့်ရန် သင်ခန်းစာမှတ်စုများ (Hands-on Practice Notes)](#6-လက်တွေ့လေ့ကျင့်ရန်-သင်ခန်းစာမှတ်စုများ-hands-on-practice-notes)
+7. [DevOps & Platform Engineering လက်တွေ့ Scenarios](#7-devops--platform-engineering-လက်တွေ့-scenarios)
 
 ---
 
@@ -190,3 +192,37 @@ git merge feature-branch
 3. **Private Branch များတွင် Rebase သုံးပါ:** အခြားသူများနှင့် မပူးပေါင်းမီ မိမိ၏ local branch history ကို သန့်ရှင်းစေရန် rebase ပြုလုပ်ပါ။
 4. **Shared/Main Branch များတွင် Merge သုံးပါ:** အဖွဲ့လိုက် သမိုင်းကြောင်းကို မပျောက်ပျက်စေရန် အလုံခြုံဆုံး နည်းလမ်း ဖြစ်ပါသည်။
 5. **Pull မလုပ်မီ Status ကို စစ်ဆေးပါ:** `git status` နှင့် `git diff` တို့ကို အမြဲ အသုံးပြု၍ သေချာစစ်ဆေးပြီးမှ commit/push ပြုလုပ်ပါ။
+
+---
+
+## 6. လက်တွေ့လေ့ကျင့်ရန် သင်ခန်းစာမှတ်စုများ (Hands-on Practice Notes)
+
+တစ်ဆင့်ချင်းစီ အသေးစိတ် လက်တွေ့ လေ့ကျင့်နိုင်ရန်အတွက် အောက်ပါ သီးသန့် သင်ခန်းစာ မှတ်စုများကို လေ့လာနိုင်ပါသည်-
+
+- 🚀 **Lesson 1:** [Git Branching လက်တွေ့လေ့ကျင့်ခန်း](./notes/lesson-01-branching.md)
+  - *Branch ဖန်တီးခြင်း၊ ကူးပြောင်းခြင်း၊ စစ်ဆေးခြင်းနှင့် ဖျက်ခြင်း*
+- 🔀 **Lesson 2:** [Git Merge Strategies လက်တွေ့လေ့ကျင့်ခန်း](./notes/lesson-02-merge-strategies.md)
+  - *Fast-Forward Merge, 3-Way Merge (`--no-ff`), Squash Merge*
+- ⏪ **Lesson 3:** [Git Time Travel (Revert & Reset) လက်တွေ့လေ့ကျင့်ခန်း](./notes/lesson-03-time-travel.md)
+  - *Git Revert, Reset (`--soft`, `--mixed`, `--hard`), `git reflog` ဖြင့် အရေးပေါ် ကယ်တင်ခြင်း*
+- 🔀 **Lesson 4:** [Git Rebase vs Merge လက်တွေ့လေ့ကျင့်ခန်း](./notes/lesson-04-rebase-vs-merge.md)
+  - *Linear History ဖန်တီးခြင်း၊ Rebase Conflicts ဖြေရှင်းခြင်း၊ The Golden Rule of Rebase*
+
+---
+
+## 7. DevOps & Platform Engineering လက်တွေ့ Scenarios
+
+DevOps / Platform Engineer များ လုပ်ငန်းခွင်တွင် နေ့စဉ် ကြုံတွေ့ရလေ့ရှိသော အခြေအနေများအတွက် အထူးပြု လက်တွေ့လေ့လာရန် မှတ်စုများ-
+
+- 🚨 **Scenario 1:** [Production Incident Hotfix & Safe Rollback](./notes/scenario-01-production-hotfix-rollback.md)
+  - *GitOps / CI/CD ပျက်စီးချိန်တွင် `git revert` ဖြင့် Safe Production Rollback ပြုလုပ်ခြင်းနှင့် `hotfix/` branch အား `--no-ff` ဖြင့် Audit Trail မပျက်အောင် ပေါင်းစပ်ခြင်း*
+- 🏗️ **Scenario 2:** [GitOps & Terraform Infrastructure PR Workflow](./notes/scenario-02-gitops-infra-pr-rebase-squash.md)
+  - *Terraform / Helm module များအား `git rebase` ဖြင့် sync လုပ်ခြင်း၊ conflict ဖြေရှင်းခြင်းနှင့် Pull Request တွင် `Squash Merge` ဖြင့် သန့်ရှင်းသော Semantic Commit ထုတ်လုပ်ခြင်း*
+- 🔐 **Scenario 3:** [Accidental Leaked Secret Removal from Remote Repo](./notes/scenario-03-leaked-secret-key-removal.md)
+  - *လွန်ခဲ့သော Commit ၄ ခုတွင် ပေါက်ကြားသွားသော Secret Key / Credentials အား Interactive Rebase (`git rebase -i HEAD~5`) နှင့် `git-filter-repo` ဖြင့် Git History အစအဆုံးမှ လုံးဝ ဖျက်ထုတ်ပစ်ခြင်း*
+- 🍒 **Scenario 4:** [Selective Hotfix Deployment with Git Cherry-Pick](./notes/scenario-04-selective-hotfix-cherry-pick.md)
+  - *`develop` branch တွင် မပြီးသေးသော WIP features များကို ချန်ထားခဲ့ပြီး အရေးပေါ် CVE Patch commit တစ်ခုတည်းကိုသာ `git cherry-pick` ဖြင့် Production သို့ ဆွဲထုတ် deploy လုပ်ခြင်း*
+- 🔍 **Scenario 5:** [Automated Incident Root Cause Analysis with Git Bisect](./notes/scenario-05-automated-debugging-git-bisect.md)
+  - *Commit ပေါင်း ၄၀ ကြားတွင် ပျက်စီးသွားသော CI/CD build regression ကို `git bisect run` ဖြင့် ၅ ကြိမ်အတွင်း အလိုအလျောက် တိကျစွာ ရှာဖွေဖော်ထုတ်ခြင်း*
+
+
