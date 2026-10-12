@@ -1,4 +1,4 @@
-# Git Complete Cheatsheet & Guide (မြန်မာလို) 🚀
+# Git Complete Cheatsheet & Guide 🚀
 
 Git ကို ကျွမ်းကျင်စွာ အသုံးပြုနိုင်ရန်အတွက် **Merge Strategies**၊ **Branching**၊ **Time Travel** နှင့် **Rebase vs Merge** စသည့် အဓိက အယူအဆ (Concept) များကို ရှင်းလင်းချက်၊ ဥပမာ Command များ၊ Best Practices များနှင့်တကွ စနစ်တကျ စုစည်းဖော်ပြပေးထားပါသည်။
 
